@@ -1,0 +1,14 @@
+<div class="background">
+  <div class="container-fluid">
+    <div class="">
+      <div class="quizCard">
+        <div
+          *ngFor="let quiz of listagemDeQuizzes"
+          class="p-2"
+        >
+        <app-card-quiz [quiz]="quiz"></app-card-quiz>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

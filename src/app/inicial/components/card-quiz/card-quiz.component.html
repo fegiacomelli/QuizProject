@@ -1,0 +1,128 @@
+
+
+          <div class="card-body zoom">
+            <h5 class="card-title">{{quiz.title}}</h5>
+            <p>Descrição: {{quiz.description}}</p>
+            <p> Level: {{quiz.level}}</p>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              [attr.data-bs-target]="'#modal' + quiz._id"
+              data-bs-whatever="@fat"
+            >
+              Editar
+            </button>
+
+            <div
+              class="modal fade"
+              [attr.id]="'modal' + quiz._id"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label"
+                          >Titulo</label
+                        >
+                        <input
+                          [(ngModel)]="quiz.title"
+                          name="editTitle"
+                          value="{{ quiz.title }}"
+                          type="text"
+                          class="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label"
+                          >Descrição</label
+                        >
+                        <textarea
+                          [(ngModel)]="quiz.description"
+                          name="editDescription"
+                          class="form-control"
+                          id="message-text"
+                          >{{ quiz.description }}</textarea
+                        >
+                      </div>
+                      <label for="message-text" class="col-form-label"
+                        >Level de dificuldade</label
+                      >
+                      <select
+                        [(ngModel)]="quiz.level"
+                        name="editLevel"
+                        class="form-select"
+                        aria-label="Default select example"
+                      >
+                        <option value="EASY">EASY</option>
+                        <option value="MEDIUM">MEDIUM</option>
+                        <option value="HARD">HARD</option>
+                      </select>
+
+                      <div class="mb-3" *ngFor="let option of quiz.options">
+                        <label *ngIf="option.correct == true" for="recipient-name" class="col-form-label"
+                          >Correta</label
+                        >
+                        <label *ngIf="option.correct == false;" for="recipient-name" class="col-form-label"
+                          >Errada</label
+                        >
+                        <input
+                          [ngModelOptions]="{standalone: true}"
+                          [(ngModel)]="option.text"
+                          type="text"
+                          class="form-control"
+                          id="recipient-name"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancelar
+                    </button>
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-primary" (click)="updateQuiz(quiz)">
+                      Salvar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalX">
+            Deletar
+              <div class="modal fade" id="exampleModalX" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                     <p class="modal-text">Voce deseja excluir este quiz?</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                      <button type="button" class="btn btn-primary" (click)="deleteQuiz(quiz)">Sim</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+

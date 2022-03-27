@@ -1,0 +1,24 @@
+
+  .background{
+    background: #201f20;
+  }
+
+  .quizCard{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
+
+  .background2{
+      background: rgb(47, 157, 142);
+      border-radius: 50px 0px 80px;
+  }
+
+  
+
+
+
+
+

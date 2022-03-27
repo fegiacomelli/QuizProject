@@ -1,0 +1,51 @@
+<div class="background0">
+
+    <div class="container-fluid ">
+
+        <div class="row d-flex justify-content-md-center align-items-md-center">
+
+
+            <div class="col-6 d-flex flex-column align-items-center justify-content-center
+            background1">
+
+                <img src="https://i.imgur.com/qVVIWkw.png" class="img-fluid logo" alt="...">
+
+                <div class="col-6 background2 text-white d-flex flex-column align-content-center">
+
+                    <form class="p-5">
+
+                        <div class="mb-3">
+                            <div class="form-group">
+                                <label for="usuario">Usuário</label>
+                                <input [(ngModel)]='userLogin.email' class="form-control caixa" type="text"
+                                    name="usuario" id="usuario" placeholder="Seu usuário">
+                            </div>
+                        </div>
+
+                        <div class="mb-1">
+                            <label for="senha">Senha</label>
+                            <input [(ngModel)]='userLogin.password' type="password" class="form-control btn-light caixa"
+                                name="senha" id="senha" type="password" placeholder="Sua senha">
+                        </div>
+
+                        <div class="mt-4 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-outline-light" (click)='login()'>Entrar</button>
+                        </div>
+
+                    </form>
+
+
+                    <hr class="mt-0 mb-2">
+                    <p class="mb-5 d-flex justify-content-center">
+                        Não tem uma conta?<a routerLink='/cadastro'> Cadastre-se</a>
+                    </p>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
