@@ -1,3 +1,9 @@
+Nome :Felipe Giacomelli
+Email:felipe.giacomelli@hotmail.com
+Fone: (11) 9 5963-0709 
+Linkedin: https://www.linkedin.com/in/felipe-giacomelli-997a8b19b/
+
+
 # QuizProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
